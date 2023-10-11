@@ -12,7 +12,7 @@ import callApi from '~/ultis/callApi'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown, faAngleUp, faList, faRightFromBracket, faTimes, faUser } from '@fortawesome/free-solid-svg-icons'
 
-const Header = ({ cates, logo, notifications, noti_count, getNotification }: any) => {
+const Header = memo(({ cates, logo, notifications, noti_count, getNotification }: any) => {
   const [toogleMenuCate, setToogleMenuCate] = useState(false)
   const [toogleMenuList, setToogleMenuList] = useState(false)
   const [toogleMenuMobile, setToogleMenuMobile] = useState(false)
@@ -296,6 +296,6 @@ const Header = ({ cates, logo, notifications, noti_count, getNotification }: any
       )}
     </>
   )
-}
+})
 
-export default memo(Header)
+export default Header

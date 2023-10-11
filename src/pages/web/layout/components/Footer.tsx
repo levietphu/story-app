@@ -5,7 +5,7 @@ import { memo } from 'react'
 import logoFooter from '~/assets/logo-footer.png'
 import { Link } from 'react-router-dom'
 
-const Footer = ({ catalog, logo, link_apple, link_androi }: any) => {
+const Footer = memo(({ catalog, logo, link_apple, link_androi }: any) => {
   return (
     <div className='footer'>
       <div className='footer__logo center'>
@@ -31,6 +31,6 @@ const Footer = ({ catalog, logo, link_apple, link_androi }: any) => {
       </div>
     </div>
   )
-}
+})
 
-export default memo(Footer)
+export default Footer

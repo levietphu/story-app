@@ -12,7 +12,7 @@ import { useAppDispatch, useAppSelector } from '~/store/hookStore'
 import { changeTheme, changeSize, isTogglePopup } from '~/store/common/commonSlice'
 import { disableReactDevTools } from '~/ultis/disable'
 import callApi from '~/ultis/callApi'
-import axios from 'axios'
+// import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faA,

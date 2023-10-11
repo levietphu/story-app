@@ -233,7 +233,7 @@ const EditStory: React.FC = () => {
                 <CKEditor
                   editor={ClassicEditor}
                   data={introduce ? introduce : ''}
-                  onChange={(event, editor) => {
+                  onChange={(_event, editor) => {
                     const data = editor.getData()
                     setIntroduce(data)
                   }}
@@ -261,7 +261,7 @@ const EditStory: React.FC = () => {
                 <CKEditor
                   editor={ClassicEditor}
                   data={discount ? discount : ''}
-                  onChange={(event, editor) => {
+                  onChange={(_event, editor) => {
                     const data = editor.getData()
                     setDiscount(data)
                   }}

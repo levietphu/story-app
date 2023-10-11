@@ -5,7 +5,7 @@ import Moment from 'react-moment'
 import axios from 'axios'
 import { memo } from 'react'
 
-const PopoverNoti = ({ notifications, getNotification }: any) => {
+const PopoverNoti = memo(({ notifications, getNotification }: any) => {
   const changeIsRead = async (id: number) => {
     await axios.post(`${import.meta.env.REACT_APP_API}change_is_read`, { id }).then(() => getNotification())
   }
@@ -46,6 +46,6 @@ const PopoverNoti = ({ notifications, getNotification }: any) => {
       </div>
     </div>
   )
-}
+})
 
-export default memo(PopoverNoti)
+export default PopoverNoti

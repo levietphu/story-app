@@ -4,7 +4,7 @@ import { memo } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLockOpen } from '@fortawesome/free-solid-svg-icons'
 
-const ChapterItem = ({ params, index, value }: any) => {
+const ChapterItem = memo(({ params, index, value }: any) => {
   return (
     <Link to={`/${params.slug}/${value.slug}`} className='center__chapter--item' key={index}>
       <div className='center__chapter--left'>
@@ -33,6 +33,6 @@ const ChapterItem = ({ params, index, value }: any) => {
       {!value.bought && value.coin > 0 && <span className='coin'>{value.coin} xu </span>}
     </Link>
   )
-}
+})
 
-export default memo(ChapterItem)
+export default ChapterItem

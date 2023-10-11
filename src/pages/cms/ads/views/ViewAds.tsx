@@ -29,7 +29,7 @@ const ViewAds: React.FC = () => {
       title: 'ID',
       dataIndex: 'id',
       key: 'id',
-      render(value, record, index) {
+      render(_value, _record, index) {
         return <a>{index + 1}</a>
       }
     },

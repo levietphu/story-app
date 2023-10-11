@@ -1,7 +1,7 @@
 import Moment from 'react-moment'
 import { memo } from 'react'
 
-const DonateItem = ({ value, index, coin }: any) => {
+const DonateItem = memo(({ value, index, coin }: any) => {
   return (
     <div className='center__chapter--item' key={index} style={{ cursor: 'default' }}>
       <div className='center__chapter--left'>
@@ -26,6 +26,6 @@ const DonateItem = ({ value, index, coin }: any) => {
       </span>
     </div>
   )
-}
+})
 
-export default memo(DonateItem)
+export default DonateItem

@@ -9,7 +9,7 @@ import axios from 'axios'
 
 const { TextArea } = Input
 
-const ModalDonate = ({ getDonate, id_truyen, setIsModalDonateOpen, setShowMessageDonate }: any) => {
+const ModalDonate = memo(({ getDonate, id_truyen, setIsModalDonateOpen, setShowMessageDonate }: any) => {
   const { user }: any = useContext(AuthContext)
   const [dataDonate, setDataDonate] = useState<any>({
     coin_donate: 10,
@@ -110,6 +110,6 @@ const ModalDonate = ({ getDonate, id_truyen, setIsModalDonateOpen, setShowMessag
       </div>
     </div>
   )
-}
+})
 
-export default memo(ModalDonate)
+export default ModalDonate

@@ -5,7 +5,7 @@ import Moment from 'react-moment'
 import 'moment/locale/vi'
 import callApi from '~/ultis/callApi'
 
-const CommentStory = ({ story, slug }: any) => {
+const CommentStory = memo(({ story, slug }: any) => {
   const [comment, setComment] = useState<any[]>([])
   const [commentChidren, setCommentChidren] = useState<any[]>([])
   const [checkComment, setCheckComment] = useState<boolean>(false)
@@ -193,6 +193,6 @@ const CommentStory = ({ story, slug }: any) => {
       </div>
     </div>
   )
-}
+})
 
-export default memo(CommentStory)
+export default CommentStory

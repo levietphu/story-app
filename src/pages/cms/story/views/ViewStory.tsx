@@ -35,7 +35,7 @@ const ViewStory: React.FC = () => {
       title: 'Stt',
       dataIndex: 'id',
       key: 'id',
-      render(value, record, index) {
+      render(_value, _record, index) {
         return index + 1
       }
     },

@@ -91,12 +91,12 @@ const DragStory = ({ data, vip }: any) => {
                     </h3>
                     <span className='ml-10 mr-15'>{item.nameTheloai ? item.nameTheloai : item.theloais.name}</span>
                     <p className='border-top'></p>
-                    <p
+                    <div
                       className='ml-10 mr-15 discount__story'
                       dangerouslySetInnerHTML={{
                         __html: item.discount ? item.discount : 'Truyện chưa có giảm giá'
                       }}
-                    ></p>
+                    ></div>
                   </div>
                 </Link>
               </SwiperSlide>

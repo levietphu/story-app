@@ -7,7 +7,7 @@ import callApi from '~/ultis/callApi'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp19, faArrowUp91, faLockOpen, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
-const ListChapter = () => {
+const ListChapter = memo(() => {
   const { togglePopup } = useAppSelector((state) => state.common.setting)
   const { user, loaderUser }: any = useContext(AuthContext)
 
@@ -170,7 +170,7 @@ const ListChapter = () => {
                     </i>
                     {item.bought && (
                       <div className='bought'>
-                        <FontAwesomeIcon icon={faLockOpen} />
+                        <FontAwesomeIcon icon={faLockOpen} color='white' />
                       </div>
                     )}
                     {!item.bought && item.coin > 0 && <span className='money'>{item.coin} xu </span>}
@@ -201,6 +201,6 @@ const ListChapter = () => {
       )}
     </>
   )
-}
+})
 
-export default memo(ListChapter)
+export default ListChapter

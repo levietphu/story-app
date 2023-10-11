@@ -24,12 +24,12 @@ const VipBuy = () => {
                     <p className='hover__story--name ml-10 mr-15'>{item.truyen.name}</p>
                     <span className='ml-10 mr-15'>{item.truyen.nameTheloai}</span>
                     <p className='border-top'></p>
-                    <p
+                    <div
                       className='ml-10 mr-15 discount__story'
                       dangerouslySetInnerHTML={{
                         __html: item.truyen.discount ? item.truyen.discount : 'Truyện chưa có giảm giá'
                       }}
-                    ></p>
+                    ></div>
                   </div>
                 </Link>
               </div>
