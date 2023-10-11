@@ -11,6 +11,8 @@ import { Alert, Modal } from 'antd'
 import ModalDonate from '../components/ModalDonate'
 import ModalChapterVip from '../components/ModalChapterVip'
 import callApi from '~/ultis/callApi'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPerson } from '@fortawesome/free-solid-svg-icons'
 
 const Story = () => {
   // data api
@@ -176,7 +178,7 @@ const Story = () => {
                 <span>dịch giả: </span>{' '}
                 <Link to={`/dich-gia/${story.dichgia.slug}`}>
                   <span className='person'>
-                    <i className='fa-solid fa-person'></i>
+                    <FontAwesomeIcon icon={faPerson} />
                   </span>{' '}
                   <span style={{ textTransform: 'initial' }}>{story.dichgia.name}</span>
                 </Link>
