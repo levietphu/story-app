@@ -1,0 +1,33 @@
+.content-request {
+  border-top: 2px solid #e7e3e3;
+  padding-top: 10px;
+  .icon-check {
+    color: green;
+    font-size: 60px;
+  }
+  .text-success {
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 10px;
+  }
+  .text-handle {
+    font-size: 18px;
+    margin: 10px 0 30px 0;
+  }
+  .btn-agree {
+    border-top: 2px solid #e7e3e3;
+    padding-top: 10px;
+    .agree {
+      width: 100%;
+      background: #357376;
+      color: white;
+      border-color: #357376;
+    }
+    .agree:hover {
+      background: #326f72;
+      color: white;
+      border-color: #326f72;
+      font-size: 1rem;
+    }
+  }
+}

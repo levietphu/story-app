@@ -1,0 +1,219 @@
+.personal {
+  display: flex;
+  @media screen and (max-width: 1023px) {
+    display: block;
+  }
+  .personal__left {
+    margin-right: 20px;
+    flex: 2;
+    @media screen and (max-width: 1023px) {
+      margin-right: 0;
+    }
+    .name__person {
+      text-align: center;
+      margin-bottom: 10px;
+      h3 {
+        font-size: 2.25rem;
+        font-weight: 300;
+        margin: 0;
+      }
+      p {
+        text-align: center;
+        span {
+          text-transform: capitalize;
+        }
+        .coin {
+          border-radius: 50%;
+          border: 1px solid black;
+          padding: 0 3px;
+          font-size: 10px;
+          font-weight: bold;
+          margin-right: 5px;
+          margin-bottom: 2px;
+        }
+      }
+    }
+    .personal__left--list {
+      @media screen and (max-width: 1023px) {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 6;
+        background: white;
+        padding: 5px;
+      }
+      .personal__item {
+        padding: 15px;
+        border-radius: 3px;
+        font-size: 1.1rem;
+        text-transform: capitalize;
+        color: black;
+        display: flex;
+        @media screen and (max-width: 1023px) {
+          display: block;
+          text-align: center;
+          font-size: 16px;
+          line-height: 16px;
+          flex: 1;
+          padding: 10px;
+        }
+        position: relative;
+        .icon-i {
+          @media screen and (max-width: 1023px) {
+            display: block;
+            font-size: 20px;
+          }
+        }
+        span {
+          flex: 8;
+        }
+      }
+      .personal__item:hover {
+        background: rgb(219, 219, 219);
+      }
+      .active__personal {
+        background: rgb(219, 219, 219);
+        color: #357376;
+      }
+    }
+  }
+  .personal__right {
+    flex: 6;
+    .list__bookcase {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      @media screen and (max-width: 1023px) {
+        gap: 10px;
+      }
+      .item__bookcase {
+        width: calc((100% - 45px) / 4);
+        @media screen and (max-width: 1023px) {
+          width: calc((100% - 10px) / 2);
+        }
+        .item {
+          box-sizing: border-box;
+          position: relative;
+          height: 100%;
+          .height__full {
+            height: 100%;
+            padding: 0;
+            background: white;
+            border-radius: 8px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            overflow: hidden;
+          }
+          .image__bookcase {
+            height: 120px;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center;
+            }
+          }
+          .title__book {
+            padding: 10px;
+            .name__book {
+              font-size: 1.5rem;
+              text-transform: capitalize;
+              font-weight: bold;
+              margin-bottom: 25px;
+              color: black;
+              display: -webkit-box;
+              -webkit-line-clamp: 3;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+            }
+            .save__chapter {
+              position: absolute;
+              bottom: 10px;
+              right: 20px;
+              color: #357376;
+              font-size: 1rem;
+              text-transform: capitalize;
+
+              @media screen and (max-width: 768px) {
+                font-size: 14px;
+              }
+            }
+          }
+          .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px 13px;
+            border-radius: 50%;
+            background: #feecf0;
+            color: #cc0f35;
+            transition: 0.4s;
+            opacity: 0;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .item__bookcase:hover .close {
+        opacity: 1;
+      }
+    }
+    .drag__story {
+      height: auto;
+      .drag__story--slider {
+        flex-wrap: wrap;
+        display: flex;
+        gap: 20px;
+
+        .story__slider--item {
+          width: calc((100% - 80px) / 5);
+          margin-right: 0;
+          margin-bottom: 0;
+          @media screen and (max-width: 1023px) {
+            width: calc((100% - 40px) / 3);
+          }
+          .pin {
+            @media screen and (max-width: 768px) {
+              width: auto;
+            }
+          }
+          .image__story {
+            width: 100%;
+            @media screen and (max-width: 1023px) {
+              height: 150px;
+            }
+          }
+          .hover__story {
+            @media screen and (max-width: 1023px) {
+              display: none;
+            }
+            width: 100%;
+            .hover__story--name {
+              display: -webkit-box;
+              -webkit-line-clamp: 3;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              font-size: 1.38rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.image__coin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  div {
+    width: 20px;
+    height: 20px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

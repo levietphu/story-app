@@ -1,0 +1,72 @@
+.translator__header {
+  height: 200px;
+  div {
+    i {
+      font-size: 6rem;
+      border-radius: 50%;
+      background: rgb(201, 197, 197);
+      color: rgb(151, 148, 148);
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      width: 130px;
+      height: 130px;
+      @media screen and (max-width: 768px) {
+        width: 70px;
+        height: 70px;
+        font-size: 3rem;
+      }
+    }
+    .translator__name {
+      text-align: center;
+      h1 {
+        margin-bottom: 0;
+        @media screen and (max-width: 768px) {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
+.translator__story {
+  margin-top: 40px;
+  .drag__story {
+    @media screen and (max-width: 1023px) {
+      margin: 0;
+    }
+    height: auto;
+    .drag__story--slider {
+      flex-wrap: wrap;
+      display: flex;
+      gap: 20px;
+
+      .story__slider--item {
+        margin-right: 0;
+        margin-top: 0;
+        box-sizing: border-box;
+        width: calc((100% - 100px) / 6);
+        @media screen and (max-width: 1023px) {
+          width: calc((100% - 40px) / 3);
+          margin-bottom: 0;
+        }
+        .pin {
+          @media screen and (max-width: 768px) {
+            width: unset;
+          }
+        }
+        .image__story {
+          width: 100%;
+          @media screen and (max-width: 1023px) {
+            height: 150px;
+          }
+        }
+        .hover__story {
+          width: 100%;
+          @media screen and (max-width: 1023px) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.today {
+  font-size: 24px;
+  color: greenyellow;
+  font-weight: 600;
+}
+.text-h3 {
+  font-size: 22px;
+}
+.dashboard-story {
+  &-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    .text-story {
+      flex: 1;
+
+      h4 {
+        margin: 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    }
+  }
+}

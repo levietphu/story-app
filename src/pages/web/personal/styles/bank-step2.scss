@@ -1,0 +1,64 @@
+.step2 {
+  .content-modal {
+    border-top: 2px solid #e7e3e3;
+    border-bottom: 2px solid #e7e3e3;
+    padding: 10px 0;
+    .info-step1 {
+      .info-payment {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1rem;
+        margin-bottom: 15px;
+      }
+      .qrcode {
+        font-size: 1rem;
+      }
+    }
+    label {
+      border-radius: 5px;
+      border: 1px dashed #357376;
+      color: #357376;
+      display: block;
+      text-align: center;
+      margin: 15px 0;
+      padding: 10px;
+      font-size: 1rem;
+    }
+    #wallet {
+      display: none;
+    }
+  }
+  .footer-modal {
+    padding-top: 10px;
+    display: flex;
+    gap: 10px;
+    button {
+      flex: 1;
+    }
+    .continue {
+      background: #357376;
+      color: white;
+      border-color: #357376;
+    }
+    .continue:hover {
+      background: #326f72;
+      color: white;
+      border-color: #326f72;
+    }
+    .cancel:hover {
+      color: rgba(0, 0, 0, 0.88);
+      border-color: #969696;
+    }
+  }
+  .copy {
+    position: fixed;
+    left: 50%;
+    color: white;
+    background: #1eb553;
+    transform: translate(-50%, -50%);
+    border-radius: 50px;
+    padding: 8px;
+    font-size: 18px;
+    transition: 0.8s;
+  }
+}

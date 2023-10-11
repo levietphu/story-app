@@ -1,0 +1,44 @@
+footer {
+  width: 100%;
+  min-height: 320px;
+  background: #efefef;
+  margin-top: auto;
+  .footer {
+    padding-bottom: 40px;
+    .footer__logo {
+      img {
+        width: 2rem;
+        height: 2rem;
+        margin-right: 5px;
+      }
+      span {
+        font-size: 1.75rem;
+        font-weight: 600;
+        text-transform: capitalize;
+        color: #3c3c3c;
+      }
+    }
+    p {
+      text-align: center;
+      font-size: 1.25rem;
+      margin: 10px 0;
+      color: rgb(49, 49, 49);
+    }
+    .footer__download {
+      img {
+        width: 102px;
+        height: 2rem;
+      }
+    }
+    .footer__support {
+      a {
+        color: #357376;
+        text-transform: capitalize;
+        font-size: 1.25rem;
+        @media screen and (max-width: 768px) {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

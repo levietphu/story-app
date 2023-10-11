@@ -1,0 +1,46 @@
+.card-step2 {
+  border-top: 2px solid #e7e3e3;
+  .card-input {
+    padding-top: 10px;
+    input {
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      outline: none;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      background: #f0f2f5;
+      border-color: #f0f2f5;
+      text-indent: 10px;
+      font-size: 1rem;
+    }
+    .card-input-active {
+      border: 1px solid black;
+      box-shadow: 0px 0px 4px 0px #357375;
+      opacity: 1;
+    }
+  }
+  .footer-modal {
+    border-top: 2px solid #e7e3e3;
+    padding-top: 10px;
+    display: flex;
+    gap: 10px;
+    button {
+      flex: 1;
+    }
+    .continue {
+      background: #357376;
+      color: white;
+      border-color: #357376;
+    }
+    .continue:hover {
+      background: #326f72;
+      color: white;
+      border-color: #326f72;
+    }
+    .cancel:hover {
+      color: rgba(0, 0, 0, 0.88);
+      border-color: #969696;
+    }
+  }
+}

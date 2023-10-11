@@ -1,0 +1,19 @@
+.relogin {
+  h3 {
+    font-size: 28px;
+    margin: 0;
+    text-align: center;
+  }
+  .button-relogin {
+    background: #357376;
+    color: white;
+    border-color: transparent;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .button-relogin:hover {
+    background: rgb(50, 101, 105) !important;
+    color: white !important;
+    border-color: transparent !important;
+  }
+}

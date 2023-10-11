@@ -1,0 +1,22 @@
+.ant-modal-footer {
+  display: none;
+}
+.submit-button {
+  display: flex;
+  justify-content: end;
+}
+.upload-list-inline .ant-upload-list-item {
+  float: left;
+  width: 200px;
+  margin-inline-end: 8px;
+}
+
+.ant-upload-rtl.upload-list-inline .ant-upload-list-item {
+  float: right;
+}
+
+.span-action {
+  cursor: pointer;
+  padding: 5px 10px;
+  color: white;
+}

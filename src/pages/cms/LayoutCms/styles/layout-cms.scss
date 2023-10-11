@@ -1,0 +1,26 @@
+.main-layout-cms {
+  background: rgb(248, 246, 246);
+  padding: 70px 20px 0 20px;
+  float: left;
+  min-height: 100vh;
+  width: calc(85% - 40px);
+  .top-main {
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p {
+      font-size: 24px;
+      color: rgb(107, 105, 105);
+    }
+    .top-main__right {
+      background: rgb(228, 228, 228);
+      font-size: 18px;
+      padding: 10px;
+      border-radius: 5px;
+      span {
+        color: rgb(107, 105, 105);
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.popover-account {
+  width: 150px;
+  //   height: 200px;
+  &__item {
+    display: flex;
+    padding: 8px 0 8px 15px;
+    color: rgb(0, 0, 0);
+    p {
+      margin-left: 10px;
+      text-transform: capitalize;
+    }
+  }
+  &__item:hover {
+    background: rgb(226, 226, 226);
+    color: rgb(65, 64, 64);
+  }
+  .border-top {
+    border-top: 1px solid rgb(189, 184, 184);
+  }
+}

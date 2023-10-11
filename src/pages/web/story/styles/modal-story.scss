@@ -1,0 +1,118 @@
+.modal-story {
+  .ant-modal-close {
+    display: none;
+  }
+}
+.modal-donate {
+  border-top: 2px solid rgb(216, 215, 215);
+  padding-top: 30px;
+  .alert-modal {
+    color: #1a9d48;
+    padding: 15px;
+    border-left: 3px solid #1a9d48;
+    border-radius: 4px;
+    background: #eefcf3;
+    span {
+      font-size: 18px;
+      font-weight: 500;
+    }
+    a {
+      color: #1a9d48;
+      margin-left: 5px;
+      text-decoration: underline;
+    }
+  }
+  .errorModal {
+    color: #cc0f35;
+    background: #feecf0;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 4px solid #f14668;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  .content-modal {
+    margin-top: 20px;
+    .main-content-modal {
+      margin-bottom: 30px;
+      font-size: 18px;
+      font-weight: 550;
+      p {
+        margin-bottom: 10px;
+      }
+      .message-donate {
+        margin-top: 20px;
+      }
+      .ant-input {
+        background: #f6f5fd;
+      }
+    }
+    label {
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+  .test-number-chapter {
+    .fix-fontsize {
+      font-size: 22px;
+      font-weight: 550;
+      opacity: 0.8;
+      margin-bottom: 10px;
+      .to-from-chapter {
+        background-color: #f5f5f5;
+        border-radius: 4px;
+        color: #4a4a4a;
+        font-size: 12px;
+        padding: 5px 10px;
+      }
+    }
+  }
+  .line {
+    border-top: 2px solid rgb(216, 215, 215);
+    padding-top: 10px;
+  }
+  .change-login {
+    margin-bottom: 30px;
+    span {
+      font-size: 20px;
+      font-weight: 600;
+      color: #646464;
+      a {
+        color: #357376;
+      }
+    }
+  }
+  .button-modal {
+    display: flex;
+    gap: 20px;
+    border-top: 2px solid rgb(216, 215, 215);
+    padding-top: 10px;
+    .donate-button {
+      background: #357376;
+      color: white;
+      border-color: transparent;
+    }
+    .donate-button:hover {
+      color: white !important;
+    }
+    button {
+      border-color: #b8b7b7;
+      flex: 1;
+    }
+    button:hover {
+      border-color: #777777 !important;
+      color: black !important;
+    }
+  }
+}
+
+.alert-success {
+  position: fixed;
+  z-index: 30;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  @media screen and (max-width: 1023px) {
+    font-size: 16px;
+  }
+}

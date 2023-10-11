@@ -1,0 +1,14 @@
+.ant-modal-footer {
+  display: none;
+}
+.submit-button {
+  display: flex;
+  justify-content: end;
+}
+.ant-checkbox-group {
+  align-items: center;
+  gap: 8px;
+  .ant-checkbox-wrapper {
+    flex: calc((100% - 24px) / 4);
+  }
+}
