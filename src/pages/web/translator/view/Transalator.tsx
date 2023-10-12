@@ -1,9 +1,11 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import MainLayout from '../../layout/view/MainLayout'
 import '../styles/translator.scss'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import callApi from '~/ultis/callApi'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
 
 const Transalator = () => {
   const [dataTran, setDataTran] = useState<any>()
@@ -32,7 +34,7 @@ const Transalator = () => {
         <div className='translator__header center'>
           <div>
             <div className='center'>
-              <i className='fa-solid fa-user'></i>
+              <FontAwesomeIcon className='icon-i' icon={faUser} />
             </div>
             <div className='translator__name'>
               <h1>{params.slugdichgia}</h1>

@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import MainLayout from '../../layout/view/MainLayout'
-import '../styles/translator.scss'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
@@ -32,7 +31,7 @@ const Author = () => {
         <div className='translator__header center'>
           <div>
             <div className='center'>
-              <FontAwesomeIcon icon={faUser} />
+              <FontAwesomeIcon className='icon-i' icon={faUser} />
             </div>
             <div className='translator__name'>
               <h1>{!loader && nameAuthor}</h1>

@@ -1,20 +1,17 @@
 .translator__header {
   height: 200px;
   div {
-    i {
-      font-size: 6rem;
+    .icon-i {
+      font-size: 4rem;
       border-radius: 50%;
       background: rgb(201, 197, 197);
       color: rgb(151, 148, 148);
       align-items: center;
       display: flex;
       justify-content: center;
-      width: 130px;
-      height: 130px;
+      padding: 30px 35px;
       @media screen and (max-width: 768px) {
-        width: 70px;
-        height: 70px;
-        font-size: 3rem;
+        font-size: 2rem;
       }
     }
     .translator__name {
