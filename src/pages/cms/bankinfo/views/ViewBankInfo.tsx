@@ -2,7 +2,7 @@ import { Card, Button, Table, Alert, Row, Col, Form, Input, Modal, Select, Image
 import '../styles/view-bankinfo.scss'
 import type { ColumnsType } from 'antd/es/table'
 import { createBankInfo, deleteBankInfo, getBankInfo, updateBankInfo } from '../api'
-import { useContext, useEffect, useState } from 'react'
+import { ChangeEvent, useContext, useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { EditOutlined } from '@ant-design/icons'
 import { faTrash, faPlus, faEye } from '@fortawesome/free-solid-svg-icons'
@@ -416,7 +416,7 @@ const ViewBankInfo: React.FC = () => {
                 name='image'
                 accept='image/png, image/gif, image/jpeg'
                 value={image}
-                onChange={(e: any) => setImage(e.target.files[0])}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => e.target.files && setImage(e.target.files[0])}
               />
             </Form.Item>
             <Row>
@@ -457,7 +457,7 @@ const ViewBankInfo: React.FC = () => {
                 name='qr_code'
                 accept='image/png, image/gif, image/jpeg'
                 value={qrCode}
-                onChange={(e: any) => setQrCode(e.target.files[0])}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => e.target.files && setQrCode(e.target.files[0])}
               />
             </Form.Item>
             <Row>

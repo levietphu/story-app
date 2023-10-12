@@ -1,6 +1,6 @@
 import { Button } from 'antd'
 import '../../../styles/card-step2.scss'
-import { useContext, useState } from 'react'
+import { ChangeEvent, useContext, useState } from 'react'
 import { AuthContext } from '~/context/AuthContextProvider'
 import callApi from '~/ultis/callApi'
 
@@ -43,7 +43,7 @@ const CardStep2 = ({ cardInfo, setCardInfoItem, setCheckSuccess }: any) => {
             placeholder='Số seri'
             onClick={() => setCheckInputSerial(!checkInputSerial)}
             onBlur={() => setCheckInputSerial(false)}
-            onChange={(e: any) => setCard({ ...card, serial: e.target.value })}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => setCard({ ...card, serial: e.target.value })}
           />
         </div>
         <div style={{ marginBottom: '10px' }}>
@@ -55,7 +55,7 @@ const CardStep2 = ({ cardInfo, setCardInfoItem, setCheckSuccess }: any) => {
             placeholder='Mã thẻ cào'
             onClick={() => setCheckInputCode(!checkInputCode)}
             onBlur={() => setCheckInputCode(false)}
-            onChange={(e: any) => setCard({ ...card, code_card: e.target.value })}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => setCard({ ...card, code_card: e.target.value })}
           />
         </div>
       </div>

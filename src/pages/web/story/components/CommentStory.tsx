@@ -4,6 +4,8 @@ import { AuthContext } from '~/context/AuthContextProvider'
 import Moment from 'react-moment'
 import 'moment/locale/vi'
 import callApi from '~/ultis/callApi'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 
 const CommentStory = memo(({ story, slug }: any) => {
   const [comment, setComment] = useState<any[]>([])
@@ -168,11 +170,13 @@ const CommentStory = memo(({ story, slug }: any) => {
                       value={replyContent}
                       onChange={(e) => setReplyContent(e.target.value)}
                     />
-                    <i
-                      className='fa-solid fa-paper-plane'
+
+                    <FontAwesomeIcon
+                      className='icon-i'
+                      icon={faPaperPlane}
                       style={{ opacity: '1' }}
                       onClick={() => replyContent && handleComment('reply', value.id)}
-                    ></i>
+                    />
                   </div>
                 )}
               </div>

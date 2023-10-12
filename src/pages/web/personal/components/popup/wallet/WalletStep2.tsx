@@ -1,3 +1,4 @@
+import { ChangeEvent } from 'react'
 import { Button, Image, Spin } from 'antd'
 import '../../../styles/bank-step2.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -10,7 +11,7 @@ import callApi from '~/ultis/callApi'
 
 const WalletStep2 = ({ walletInfo, setWalletInfoItem, handleCopy, showCopy, setCheckSuccess }: any) => {
   const { user }: any = useContext(AuthContext)
-  const [walletFile, setWalletFile] = useState<any>()
+  const [walletFile, setWalletFile] = useState<File | null>(null)
   const [loading, setLoading] = useState<boolean>(false)
 
   const antIcon = <LoadingOutlined rev={undefined} style={{ fontSize: 24 }} spin />
@@ -22,17 +23,18 @@ const WalletStep2 = ({ walletInfo, setWalletInfoItem, handleCopy, showCopy, setC
       setLoading(false)
     })
   }
-
   const createTransaction = () => {
     const data = new FormData()
-    data.append('transaction_code', walletInfo.transitionCode)
-    data.append('content', 'Nộp ' + walletInfo.value + 'k ' + walletInfo.name_bank)
-    data.append('coin_number', walletInfo.coin + (walletInfo.bonus ? walletInfo.bonus : 0))
-    data.append('money', walletInfo.value)
-    data.append('id_user', user.user.id)
-    data.append('id_bankinfo', walletInfo.id)
-    data.append('image', walletFile)
-    handleSuccess(data)
+    if (walletFile) {
+      data.append('transaction_code', walletInfo.transitionCode)
+      data.append('content', 'Nộp ' + walletInfo.value + 'k ' + walletInfo.name_bank)
+      data.append('coin_number', walletInfo.coin + (walletInfo.bonus ? walletInfo.bonus : 0))
+      data.append('money', walletInfo.value)
+      data.append('id_user', user.user.id)
+      data.append('id_bankinfo', walletInfo.id)
+      data.append('image', walletFile)
+      handleSuccess(data)
+    }
   }
 
   return (
@@ -99,7 +101,7 @@ const WalletStep2 = ({ walletInfo, setWalletInfoItem, handleCopy, showCopy, setC
             id='wallet'
             type='file'
             accept='image/png,image/gif,image/jpeg'
-            onChange={(e: any) => setWalletFile(e.target.files[0])}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => e.target.files && setWalletFile(e.target.files[0])}
           />
           {walletFile && (
             <div className='center'>

@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from 'react'
+import { useState, useContext, useEffect, ChangeEvent } from 'react'
 import './user.scss'
 import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '~/context/AuthContextProvider'
@@ -39,7 +39,7 @@ const Login = () => {
     user && navigate('/')
   }, [user])
 
-  const loginTienVuc = async (e: any) => {
+  const loginTienVuc = async (e: ChangeEvent<HTMLFormElement>) => {
     setLoaderLogin(true)
     e.preventDefault()
     await axios

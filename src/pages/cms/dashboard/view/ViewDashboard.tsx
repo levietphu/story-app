@@ -204,7 +204,7 @@ const ViewDashboard = () => {
           </Card>
         </Col>
       </Row>
-      {checkAdmin(user.role, 43) && (
+      {checkAdmin(user.role, 44) && (
         <>
           {message && <Alert message={message} type='success' />}
           <h3 className='text-h3'>Thống kê các giao dịch rút tiền</h3>

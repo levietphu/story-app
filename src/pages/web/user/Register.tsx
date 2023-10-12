@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react'
+import { useState, useEffect, useContext, ChangeEvent } from 'react'
 import './user.scss'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../../../context/AuthContextProvider'
@@ -55,7 +55,7 @@ const Register = () => {
     }
   }, [errorServer])
 
-  const registerTienVuc = async (e: any) => {
+  const registerTienVuc = async (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault()
     setLoaderRegister(true)
     await axios
@@ -84,7 +84,7 @@ const Register = () => {
 
             <i className='fa-solid fa-clipboard-list'></i>
           </h1>
-          <form onSubmit={(e) => (checkRules ? registerTienVuc(e) : e.preventDefault())}>
+          <form onSubmit={(e: ChangeEvent<HTMLFormElement>) => (checkRules ? registerTienVuc(e) : e.preventDefault())}>
             <div className='login__main'>
               <div className='name__login'>
                 <p>Tên tài khoản</p>
@@ -99,7 +99,7 @@ const Register = () => {
                   }}
                   name='name'
                   value={dataRegister.name}
-                  onChange={(e: any) => {
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => {
                     setDataRegister({ ...dataRegister, name: e.target.value })
                   }}
                 />
@@ -124,7 +124,9 @@ const Register = () => {
                   onClick={() => setCheckInputEmail(!checkInputEmail)}
                   name='email'
                   value={dataRegister.email}
-                  onChange={(e: any) => setDataRegister({ ...dataRegister, email: e.target.value })}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                    setDataRegister({ ...dataRegister, email: e.target.value })
+                  }
                 />
                 {errorServer &&
                   errorServer.email &&
@@ -148,7 +150,7 @@ const Register = () => {
                   onBlur={() => setCheckInputPass(false)}
                   name='password'
                   value={dataRegister.password}
-                  onChange={(e: any) =>
+                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
                     setDataRegister({
                       ...dataRegister,
                       password: e.target.value

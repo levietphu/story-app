@@ -1,7 +1,7 @@
 import { Card, Button, Table, Alert, Row, Col, Form, Input, Modal, Image, Tooltip } from 'antd'
 import type { ColumnsType } from 'antd/es/table'
 import { createAffiliatedBank, getAffiliatedBank } from '../api'
-import { useContext, useEffect, useState } from 'react'
+import { ChangeEvent, useContext, useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { changeToSlug } from '~/ultis/changeToSlug'
@@ -291,7 +291,7 @@ const ViewAffiliatedBank: React.FC = () => {
                 name='image'
                 accept='image/png, image/gif, image/jpeg'
                 value={image}
-                onChange={(e: any) => setImage(e.target.files[0])}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => e.target.files && setImage(e.target.files[0])}
               />
             </Form.Item>
             <Row>

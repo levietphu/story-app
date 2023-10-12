@@ -1,5 +1,5 @@
 import '../../styles/loadcent.scss'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, ChangeEvent } from 'react'
 import { Modal } from 'antd'
 import PaymentStep1 from '../popup/PaymentStep1'
 import BankStep2 from '../popup/bank/BankStep2'
@@ -36,8 +36,8 @@ const LoadCents = () => {
     setTransitionCode('TV' + Math.floor(Math.random() * 100000000000))
   }
 
-  const handleCopy = (e: any) => {
-    navigator.clipboard.writeText(e.target.innerText)
+  const handleCopy = (e: ChangeEvent<HTMLElement>) => {
+    navigator.clipboard.writeText(e.currentTarget.innerText)
     setShowCopy(true)
   }
 

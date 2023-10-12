@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, ChangeEvent } from 'react'
 import { Link } from 'react-router-dom'
 import { useOutSide } from '~/hookCustom/useOutSide'
 import SearchLoader from './SearchLoader'
@@ -45,7 +45,7 @@ const Search = () => {
           type='text'
           placeholder='Tìm kiếm truyện...'
           value={keyword}
-          onChange={(e: any) => setKeyword(e.target.value)}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => setKeyword(e.target.value)}
           onClick={() => setCheck(!check)}
         />
         {keyword && (

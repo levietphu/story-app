@@ -1,7 +1,7 @@
 export const getCookie = (name: string) => {
   const token = document.cookie
-    .split("; ")
+    .split('; ')
     .find((row) => row.startsWith(name))
-    ?.split("=")[1];
-  return token;
-};
+    ?.split('=')[1]
+  return token
+}
