@@ -5,6 +5,7 @@ import SearchLoader from './SearchLoader'
 import callApi from '~/ultis/callApi'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass, faXmark } from '@fortawesome/free-solid-svg-icons'
+import '../styles/search.scss'
 
 const Search = () => {
   const [dataSearch, setDataSearch] = useState<any[]>([])

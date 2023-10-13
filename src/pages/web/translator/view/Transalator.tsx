@@ -8,7 +8,7 @@ import callApi from '~/ultis/callApi'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 
 const Transalator = () => {
-  const [dataTran, setDataTran] = useState<any>()
+  const [dataTran, setDataTran] = useState<any[]>([])
   const [loader, setLoader] = useState<boolean>(true)
 
   const params = useParams()

@@ -1,0 +1,113 @@
+.search {
+  .search__container {
+    display: flex;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    min-height: 50px;
+    max-height: 100vh;
+    .search__icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 12;
+      background: #f7f6f6;
+      cursor: pointer;
+      i {
+        color: #b5b2b2;
+        font-size: 1.25rem;
+      }
+    }
+    .search-input {
+      width: 100%;
+      border: none;
+      outline: 0;
+      padding: 15px 15px;
+      font-size: 1.25rem;
+      background: #f7f6f6;
+      color: black;
+      text-indent: 40px;
+    }
+    .close__icon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      i {
+        color: #296fa8;
+        font-size: 1.25rem;
+      }
+    }
+    box-sizing: border-box;
+    border: 1px solid #f7f6f6;
+  }
+  .search__container.search__container--active {
+    border: 1px solid #357375;
+    box-shadow: 0px 0px 10px 0px #357375;
+    opacity: 1;
+  }
+  .search__menu {
+    position: absolute;
+    background: #f7f6f6;
+    margin-top: 3px;
+    border-radius: 5px;
+    z-index: 20;
+    span {
+      line-height: 35px;
+      font-size: 1.1rem;
+      color: #727272;
+      margin-left: 10px;
+    }
+    .search__menu--item {
+      display: flex;
+      padding: 15px 15px;
+      border-top: 1px solid #e7e3e3;
+      .menu__item--image {
+        width: 60px;
+        height: 90px;
+        margin: 0 15px 0 0;
+        img {
+          width: 100%;
+        }
+      }
+      .name__cate {
+        p {
+          font-size: 1.5rem;
+          font-weight: 700;
+          margin: 0;
+          padding: 0;
+          color: black;
+        }
+        .menu__item--cate {
+          display: flex;
+          flex-wrap: wrap;
+          .btn {
+            margin: 10px 10px 0 0;
+            padding: 5px 10px;
+            border: none;
+            background: #1eb553;
+            color: white;
+            font-size: 12px;
+          }
+          .btn__cate {
+            background: #3e8ed0;
+          }
+        }
+      }
+    }
+  }
+  .scroll-search {
+    overflow: auto;
+    height: 245px;
+  }
+}

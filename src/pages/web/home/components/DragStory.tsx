@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import '../styles/drag-story.scss'
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react'

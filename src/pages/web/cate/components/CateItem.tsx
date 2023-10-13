@@ -6,7 +6,7 @@ const CateItem = ({ item, index }: any) => {
 
   return (
     <div className='item__story--newupdate'>
-      <div className='image__story mr-10'>
+      <div className='image__story'>
         <Link to={`/${item.slug}`}>
           <img src={`${import.meta.env.REACT_APP_UPLOADS}${item.image}`} alt='webtruyen' />
         </Link>
@@ -24,7 +24,7 @@ const CateItem = ({ item, index }: any) => {
       </div>
 
       <div className='story__newupdate--right'>
-        <div className='name__story mr-10'>
+        <div className='name__story'>
           <h3>
             <Link className='mr-5' to={`/${item.slug}`}>
               <span>{item.name}</span>
@@ -38,7 +38,7 @@ const CateItem = ({ item, index }: any) => {
           </h3>
           <p>{item.tacgia?.name}</p>
         </div>
-        <div className='cate__story mr-10'>
+        <div className='cate__story'>
           {item.theloais.map((value: any, index: number) => {
             return (
               <h3 key={index}>

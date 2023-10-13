@@ -1,0 +1,128 @@
+.drag__story {
+  // overflow: hidden;
+  height: 320px;
+  position: relative;
+  @media screen and (max-width: 768px) {
+    height: 170px;
+  }
+  .mySwiper {
+    height: 100%;
+    .swiper-pagination {
+      bottom: var(--swiper-pagination-bottom, 0);
+    }
+  }
+  .drag__story--slider {
+    width: 100%;
+    display: flex;
+    position: relative;
+    top: 0;
+    .swiper-slide {
+      flex-shrink: unset;
+    }
+    .story__slider--item {
+      margin-right: 25px;
+      position: relative;
+      margin-bottom: 10px;
+
+      a {
+        .pin {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          @media screen and (max-width: 768px) {
+            width: 90px;
+            top: 5px;
+          }
+          .btn__vip {
+            padding: 5px 10px;
+            background: #f5f593;
+            text-transform: uppercase;
+            margin-right: 5px;
+            border-radius: 3px;
+            font-size: 12px;
+            cursor: pointer;
+            @media screen and (max-width: 768px) {
+              font-size: 10px;
+            }
+          }
+          .btn__full {
+            padding: 5px 10px;
+            background: #1eb553;
+            text-transform: uppercase;
+
+            border-radius: 3px;
+            font-size: 12px;
+            cursor: pointer;
+            @media screen and (max-width: 768px) {
+              font-size: 10px;
+            }
+          }
+        }
+        .image__story {
+          width: 200px;
+          height: 300px;
+
+          img {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+        .hover__story {
+          position: absolute;
+          width: 200px;
+          height: 300px;
+          top: 0;
+          left: 0;
+          opacity: 0;
+          transition: 0.3s;
+          border-radius: 5px;
+          background: rgba(54, 54, 54, 0.9);
+          overflow: hidden;
+          @media screen and (max-width: 768px) {
+            display: none;
+          }
+          .hover__story--name {
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 50px;
+            margin-top: 20px;
+            height: 25%;
+          }
+          span {
+            text-align: center;
+            padding: 4px 6px;
+            background: white;
+            color: #605e5e;
+            text-transform: capitalize;
+            font-size: 13px;
+            border-radius: 3px;
+          }
+          .border-top {
+            border-top: 1px solid white;
+            width: 60px;
+            margin-left: 10px;
+            margin-top: 10px;
+          }
+          .discount__story {
+            color: white;
+            font-size: 1.1rem;
+            line-height: 25px;
+            margin-top: 10px;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+          }
+        }
+      }
+    }
+    .story__slider--item:hover .hover__story {
+      opacity: 1;
+    }
+  }
+}

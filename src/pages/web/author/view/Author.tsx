@@ -7,8 +7,8 @@ import callApi from '~/ultis/callApi'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 
 const Author = () => {
-  const [dataAuthor, setDataAuthor] = useState<any>()
-  const [nameAuthor, setNameAuthor] = useState<any>()
+  const [dataAuthor, setDataAuthor] = useState<any[]>([])
+  const [nameAuthor, setNameAuthor] = useState<string>('')
   const [loader, setLoader] = useState<boolean>(true)
 
   const params = useParams()

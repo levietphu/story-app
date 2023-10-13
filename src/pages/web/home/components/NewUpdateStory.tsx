@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import Moment from 'react-moment'
 import 'moment/locale/vi'
 import NewUpdateLoader from './NewUpdateLoader'
+import '../styles/new-update-story.scss'
 
 const NewUpdateStory = ({ data }: any) => {
   return (
@@ -10,12 +11,11 @@ const NewUpdateStory = ({ data }: any) => {
         data.map((item: any) => {
           return (
             <div className='item__story--newupdate' key={item.id}>
-              <div className='image__story mr-10'>
+              <div className='image__story'>
                 <img src={`${import.meta.env.REACT_APP_UPLOADS}${item.image}`} alt='webtruyen' />
               </div>
-
               <div className='story__newupdate--right'>
-                <div className='name__story mr-10'>
+                <div className='name__story'>
                   <h3>
                     <Link className='mr-5' to={`/${item.slug}`}>
                       <span>{item.name}</span>
@@ -29,7 +29,7 @@ const NewUpdateStory = ({ data }: any) => {
                   </h3>
                   <p>{item.tacgia?.name}</p>
                 </div>
-                <div className='cate__story mr-10'>
+                <div className='cate__story'>
                   {item.theloais.map((value: any) => {
                     return (
                       <Link to={`/the-loai/${value.slug}`} key={value.id}>
