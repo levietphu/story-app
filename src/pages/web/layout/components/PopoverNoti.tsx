@@ -5,7 +5,12 @@ import Moment from 'react-moment'
 import axios from 'axios'
 import { memo } from 'react'
 
-const PopoverNoti = memo(({ notifications, getNotification }: any) => {
+type PopoverNotiProps = {
+  notifications: any
+  getNotification: () => void
+}
+
+const PopoverNoti: React.FC<PopoverNotiProps> = memo(({ notifications, getNotification }) => {
   const changeIsRead = async (id: number) => {
     await axios.post(`${import.meta.env.REACT_APP_API}change_is_read`, { id }).then(() => getNotification())
   }

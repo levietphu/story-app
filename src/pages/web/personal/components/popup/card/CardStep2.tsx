@@ -4,7 +4,13 @@ import { ChangeEvent, useContext, useState } from 'react'
 import { AuthContext } from '~/context/AuthContextProvider'
 import callApi from '~/ultis/callApi'
 
-const CardStep2 = ({ cardInfo, setCardInfoItem, setCheckSuccess }: any) => {
+type CardStep2Props = {
+  cardInfo: any
+  setCardInfoItem: (value: any) => void
+  setCheckSuccess: (valueType: boolean) => void
+}
+
+const CardStep2: React.FC<CardStep2Props> = ({ cardInfo, setCardInfoItem, setCheckSuccess }) => {
   const [checkInputSerial, setCheckInputSerial] = useState<boolean>(false)
   const [checkInputCode, setCheckInputCode] = useState<boolean>(false)
   const [card, setCard] = useState<any>({

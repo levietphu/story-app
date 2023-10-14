@@ -12,7 +12,15 @@ import callApi from '~/ultis/callApi'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown, faAngleUp, faList, faRightFromBracket, faTimes, faUser } from '@fortawesome/free-solid-svg-icons'
 
-const Header = memo(({ cates, logo, notifications, noti_count, getNotification }: any) => {
+type HeaderProps = {
+  cates: any
+  logo: any
+  notifications: any
+  noti_count: number
+  getNotification: () => void
+}
+
+const Header: React.FC<HeaderProps> = memo(({ cates, logo, notifications, noti_count, getNotification }) => {
   const [toogleMenuCate, setToogleMenuCate] = useState(false)
   const [toogleMenuList, setToogleMenuList] = useState(false)
   const [toogleMenuMobile, setToogleMenuMobile] = useState(false)

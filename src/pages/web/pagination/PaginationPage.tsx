@@ -5,7 +5,13 @@ import { Pagination } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
-const PaginationPage = memo(({ data, callApiPagination, check }: any) => {
+type PaginationPageProps = {
+  data: any
+  callApiPagination: any
+  check: string
+}
+
+const PaginationPage: React.FC<PaginationPageProps> = memo(({ data, callApiPagination, check }) => {
   const { user }: any = useContext(AuthContext)
 
   const changePage = (word: string) => {

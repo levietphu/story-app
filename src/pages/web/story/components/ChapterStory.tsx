@@ -10,7 +10,15 @@ import callApi from '~/ultis/callApi'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp19, faArrowUp91, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
-const ChapterStory = memo(({ getDonate, story, user, donates, totalDonate }: any) => {
+type ChapterStoryProps = {
+  getDonate: () => void
+  story: any
+  user: any
+  donates: any
+  totalDonate?: number
+}
+
+const ChapterStory: React.FC<ChapterStoryProps> = memo(({ getDonate, story, user, donates, totalDonate }) => {
   const [chapterStory, setChapterStory] = useState<any>()
 
   const [keyword, setKeyword] = useState<string>('')

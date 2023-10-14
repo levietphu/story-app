@@ -2,7 +2,15 @@ import { useState } from 'react'
 import coin from '~/assets/coin.svg'
 import { Button } from 'antd'
 
-const PaymentStep1Item = ({ item, note, setIsModal, setInfoItem, transitionCode }: any) => {
+type PaymentStep1Item = {
+  item: any
+  note: string
+  setIsModal: (value: boolean) => void
+  setInfoItem: (value: any) => void
+  transitionCode: string
+}
+
+const PaymentStep1Item: React.FC<PaymentStep1Item> = ({ item, note, setIsModal, setInfoItem, transitionCode }) => {
   const [key, setKey] = useState<number>(0)
   return (
     <>

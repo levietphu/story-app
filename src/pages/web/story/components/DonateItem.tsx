@@ -1,7 +1,13 @@
 import Moment from 'react-moment'
 import { memo } from 'react'
 
-const DonateItem = memo(({ value, index, coin }: any) => {
+type DonateItemProps = {
+  value: any
+  index: number
+  coin: string
+}
+
+const DonateItem: React.FC<DonateItemProps> = memo(({ value, index, coin }) => {
   return (
     <div className='center__chapter--item' key={index} style={{ cursor: 'default' }}>
       <div className='center__chapter--left'>

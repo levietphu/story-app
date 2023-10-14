@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 
 export const useOutSide = (handler: any) => {
-  let Ref = useRef<HTMLDivElement>(null)
+  const Ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const checkMouse = (e: any) => {

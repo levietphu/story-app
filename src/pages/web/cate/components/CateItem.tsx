@@ -1,7 +1,12 @@
 import Moment from 'react-moment'
 import { Link, useParams } from 'react-router-dom'
 
-const CateItem = ({ item, index }: any) => {
+type CateItemProps = {
+  item: any
+  index: number
+}
+
+const CateItem: React.FC<CateItemProps> = ({ item, index }) => {
   const params = useParams()
 
   return (

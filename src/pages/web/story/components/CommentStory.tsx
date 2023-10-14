@@ -7,7 +7,12 @@ import callApi from '~/ultis/callApi'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 
-const CommentStory = memo(({ story, slug }: any) => {
+type CommentProps = {
+  story?: any
+  slug?: string
+}
+
+const CommentStory: React.FC<CommentProps> = memo(({ story, slug }) => {
   const [comment, setComment] = useState<any[]>([])
   const [commentChidren, setCommentChidren] = useState<any[]>([])
   const [checkComment, setCheckComment] = useState<boolean>(false)

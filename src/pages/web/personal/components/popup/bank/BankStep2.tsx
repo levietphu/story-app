@@ -8,7 +8,15 @@ import { AuthContext } from '~/context/AuthContextProvider'
 import { LoadingOutlined } from '@ant-design/icons'
 import callApi from '~/ultis/callApi'
 
-const BankStep2 = ({ bankInfo, setBankInfoItem, handleCopy, showCopy, setCheckSuccess }: any) => {
+type BankStep2Props = {
+  bankInfo: any
+  setBankInfoItem: (value: any) => void
+  handleCopy: (value: any) => void
+  showCopy: boolean
+  setCheckSuccess: (value: boolean) => void
+}
+
+const BankStep2: React.FC<BankStep2Props> = ({ bankInfo, setBankInfoItem, handleCopy, showCopy, setCheckSuccess }) => {
   const [loading, setLoading] = useState(false)
 
   const { user }: any = useContext(AuthContext)

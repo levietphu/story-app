@@ -4,7 +4,14 @@ import type { TabsProps } from 'antd'
 import PaymentStep1Item from './PaymentStep1Item'
 import LabelStep1 from './LabelStep1'
 
-const PaymentStep1 = ({ data, setIsModal, setInfoItem, transitionCode }: any) => {
+type PaymentStep1Props = {
+  data: any
+  setIsModal: (value: boolean) => void
+  setInfoItem: (value: any) => void
+  transitionCode: string
+}
+
+const PaymentStep1: React.FC<PaymentStep1Props> = ({ data, setIsModal, setInfoItem, transitionCode }) => {
   const items: TabsProps['items'] = data.map((item: any, index: number) => {
     return {
       key: index,

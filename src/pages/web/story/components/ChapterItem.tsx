@@ -4,7 +4,13 @@ import { memo } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLockOpen } from '@fortawesome/free-solid-svg-icons'
 
-const ChapterItem = memo(({ params, index, value }: any) => {
+type ChapterItemProps = {
+  params: any
+  index: number
+  value: any
+}
+
+const ChapterItem: React.FC<ChapterItemProps> = memo(({ params, index, value }) => {
   return (
     <Link to={`/${params.slug}/${value.slug}`} className='center__chapter--item' key={index}>
       <div className='center__chapter--left'>

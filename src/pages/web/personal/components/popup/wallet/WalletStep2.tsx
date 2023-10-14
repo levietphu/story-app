@@ -9,7 +9,21 @@ import { useContext, useState } from 'react'
 import { LoadingOutlined } from '@ant-design/icons'
 import callApi from '~/ultis/callApi'
 
-const WalletStep2 = ({ walletInfo, setWalletInfoItem, handleCopy, showCopy, setCheckSuccess }: any) => {
+type WalletStep2Props = {
+  walletInfo: any
+  setWalletInfoItem: (value: any) => void
+  handleCopy: (value: any) => void
+  showCopy: boolean
+  setCheckSuccess: (value: boolean) => void
+}
+
+const WalletStep2: React.FC<WalletStep2Props> = ({
+  walletInfo,
+  setWalletInfoItem,
+  handleCopy,
+  showCopy,
+  setCheckSuccess
+}) => {
   const { user }: any = useContext(AuthContext)
   const [walletFile, setWalletFile] = useState<File | null>(null)
   const [loading, setLoading] = useState<boolean>(false)

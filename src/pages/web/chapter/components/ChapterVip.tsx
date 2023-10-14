@@ -3,7 +3,13 @@ import axios from 'axios'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import { AuthContext } from '../../../../context/AuthContextProvider'
 
-const ChapterVip = ({ coin, setError, callApi }: any) => {
+type ChapterVipProps = {
+  coin: number
+  setError: (value: any) => void
+  callApi: any
+}
+
+const ChapterVip: React.FC<ChapterVipProps> = memo(({ coin, setError, callApi }: any) => {
   const { user }: any = useContext(AuthContext)
 
   const params = useParams()
@@ -52,6 +58,6 @@ const ChapterVip = ({ coin, setError, callApi }: any) => {
       </div>
     </div>
   )
-}
+})
 
-export default memo(ChapterVip)
+export default ChapterVip

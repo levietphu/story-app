@@ -2,7 +2,13 @@ import '../../styles/payment-request.scss'
 import { CheckCircleFilled } from '@ant-design/icons'
 import { Button } from 'antd'
 
-const PaymentRequestSuccess = ({ setIsModal, setCheckSuccess, setInfoItem }: any) => {
+type PaymentRequestSuccessProps = {
+  setIsModal: (value: boolean) => void
+  setCheckSuccess: (value: boolean) => void
+  setInfoItem: (value: any) => void
+}
+
+const PaymentRequestSuccess: React.FC<PaymentRequestSuccessProps> = ({ setIsModal, setCheckSuccess, setInfoItem }) => {
   return (
     <div className='content-request'>
       <CheckCircleFilled className='icon-check center' rev={undefined} />
