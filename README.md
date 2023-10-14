@@ -6,7 +6,9 @@
   B1: Run the following command: npm i prettier eslint-config-prettier eslint-plugin-prettier -D
   B2: Config ESlint
       + Open file `.eslintrc.cjs`
-      + Thêm đoạn giá trị này vào mảng `ignorePatterns`, mục đích là mình không muốn ESLint check file `vite.config.ts`: 'vite.config.ts'
+      + Thêm đoạn giá trị này vào mảng `ignorePatterns`, mục đích là mình không muốn ESLint check file `vite.config.ts`:
+    //kkk
+  'vite.config.ts'
       + Thêm đoạn code sau vào mảng extends: 'eslint-config-prettier', 'prettier'
       + Thêm đoạn code sau vào mảng plugins: 'prettier'
       + Thêm đoạn code sau vào object rules để thêm các rule của Prettier: 'prettier/prettier':
