@@ -10,7 +10,7 @@ import { useAppSelector } from '~/store/hookStore'
 
 const LayoutCms = ({ children }: Props) => {
   const [notifications, setNotifications] = useState<any>()
-  const [noti_count, setNotiCount] = useState<number>()
+  const [noti_count, setNotiCount] = useState<number>(0)
 
   const { dataLayout, loading } = useAppSelector((state) => state.common.layout)
   const { user }: any = useContext(AuthContext)

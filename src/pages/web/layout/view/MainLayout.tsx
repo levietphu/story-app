@@ -47,7 +47,15 @@ const MainLayout = ({ children }: Props) => {
   return (
     <>
       <header>
-        <Header cates={!loading && dataLayout.cates} logo={!loading && dataLayout.logo_header} />
+        <Header
+          cates={!loading && dataLayout.cates}
+          logo={!loading && dataLayout.logo_header}
+          notifications={undefined}
+          noti_count={0}
+          getNotification={function (): void {
+            throw new Error('Function not implemented.')
+          }}
+        />
       </header>
       <main
         className={`${
