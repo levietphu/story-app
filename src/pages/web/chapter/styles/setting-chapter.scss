@@ -1,0 +1,147 @@
+.setting__chapter {
+  width: 60px;
+  background: white;
+  position: fixed;
+  top: 30vh;
+  left: 0;
+  border-radius: 3px;
+  @media screen and (max-width: 1023px) {
+    width: 100%;
+    top: unset;
+    bottom: -1px;
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 0;
+    padding: 5px 0;
+  }
+  .setting,
+  .change__story,
+  .list__chapter,
+  .tick__chapter,
+  .prev__chapter,
+  .next__chapter {
+    text-align: center;
+    margin-bottom: 5px;
+    @media screen and (max-width: 1023px) {
+      margin-bottom: 0 !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .icon-i {
+      padding: 15px;
+      font-size: 1.3rem;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+    .icon-i:hover {
+      background: #ece7e7;
+    }
+  }
+  .setting {
+    .icon-i {
+      margin-top: 10px;
+      @media screen and (max-width: 1023px) {
+        margin-top: 0;
+      }
+    }
+  }
+  .next__chapter {
+    padding-bottom: 5px;
+    @media screen and (max-width: 1023px) {
+      padding-bottom: 0;
+    }
+  }
+  .forbidden {
+    .icon-i {
+      opacity: 0.5;
+      background: white;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.main__setting {
+  background: white;
+  width: 300px;
+  border-radius: 5px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  position: fixed;
+  top: 30vh;
+  left: 0;
+  @media screen and (max-width: 1023px) {
+    width: 100%;
+    top: unset;
+    bottom: 0;
+    border-radius: 0;
+  }
+  .setting__close {
+    display: flex;
+    .xmark {
+      padding: 15px 18px;
+      font-size: 1.3rem;
+      cursor: pointer;
+      border-radius: 3px;
+      margin: 10px 10px 0 10px;
+    }
+    .xmark:hover {
+      background: #ece7e7;
+    }
+    p {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+  }
+
+  .interfce {
+    display: flex;
+    justify-content: space-between;
+    .name {
+      font-size: 1.5rem;
+      margin: 5px 30px 0 20px;
+      font-weight: 500;
+    }
+    .icon-block {
+      margin-right: 10px;
+      .icon {
+        border-radius: 50%;
+        padding: 8px;
+        cursor: pointer;
+        border: 3px solid rgb(109, 108, 108);
+        margin-right: 10px;
+      }
+      .fix-padding {
+        padding: 8px 10px;
+      }
+      .active__theme {
+        border: 3px solid #3e8ed0;
+      }
+    }
+  }
+  .fontsize-container {
+    display: flex;
+    padding-bottom: 10px;
+    justify-content: space-between;
+    p {
+      font-size: 1.5rem;
+      margin: 10px 80px 0 20px;
+      font-weight: 500;
+    }
+    div {
+      display: flex;
+      margin-right: 10px;
+      .fontsize__up,
+      .fontsize__down {
+        padding: 15px;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-right: 5px;
+      }
+      .fontsize__down:hover,
+      .fontsize__up:hover {
+        background: #ece7e7;
+      }
+    }
+  }
+}
