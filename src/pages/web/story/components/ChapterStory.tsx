@@ -1,4 +1,4 @@
-import { useState, useEffect, memo, useCallback } from 'react'
+import { useState, useEffect, memo, useCallback, useContext } from 'react'
 import chicken from '~/assets/chicken.png'
 import 'moment/locale/vi'
 import { useParams } from 'react-router-dom'
@@ -9,16 +9,16 @@ import DonateItem from './DonateItem'
 import callApi from '~/ultis/callApi'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp19, faArrowUp91, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { AuthContext } from '~/context/AuthContextProvider'
 
 type ChapterStoryProps = {
   getDonate: () => void
   story: any
-  user: any
   donates: any
   totalDonate?: number
 }
 
-const ChapterStory: React.FC<ChapterStoryProps> = memo(({ getDonate, story, user, donates, totalDonate }) => {
+const ChapterStory: React.FC<ChapterStoryProps> = memo(({ getDonate, story, donates, totalDonate }) => {
   const [chapterStory, setChapterStory] = useState<any>()
 
   const [keyword, setKeyword] = useState<string>('')
@@ -29,6 +29,8 @@ const ChapterStory: React.FC<ChapterStoryProps> = memo(({ getDonate, story, user
 
   const params = useParams()
 
+  const { user }: any = useContext(AuthContext)
+
   const getChapter = useCallback(
     async (id_user: string, page: number) => {
       await callApi(
@@ -37,7 +39,7 @@ const ChapterStory: React.FC<ChapterStoryProps> = memo(({ getDonate, story, user
         `get_chapter_story?slug=${params.slug}&page=${page}&keyword=${keyword}&orderby=${orderby}&id_user=${id_user}`
       ).then((res: any) => setChapterStory(res.data.chapter))
     },
-    [keyword, orderby]
+    [keyword, orderby, user]
   )
 
   useEffect(() => {
@@ -46,7 +48,7 @@ const ChapterStory: React.FC<ChapterStoryProps> = memo(({ getDonate, story, user
     } else {
       getChapter('', 1)
     }
-  }, [])
+  }, [user])
 
   useEffect(() => {
     if (checkKeywordOrderby) {

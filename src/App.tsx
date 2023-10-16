@@ -20,8 +20,8 @@ function App() {
   return (
     <CustomRouter history={history}>
       <Routes>
-        <Route path='/*' element={<PermissionContent />}></Route>
-        <Route path='*' element={<NotFound />}></Route>
+        <Route path='/*' element={<PermissionContent />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </CustomRouter>
   )

@@ -1,11 +1,10 @@
-import { useState, useEffect, useContext, useCallback } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import '../styles/story.scss'
 import MainLayout from '../../layout/view/MainLayout'
 import { Link, useParams, useNavigate, useSearchParams } from 'react-router-dom'
 import CommentStory from '../components/CommentStory'
 import ChapterStory from '../components/ChapterStory'
 import Loader from '../components/Loader'
-import { AuthContext } from '~/context/AuthContextProvider'
 import { DownOutlined, UpOutlined, CrownFilled } from '@ant-design/icons'
 import { Alert, Modal } from 'antd'
 import ModalDonate from '../components/ModalDonate'
@@ -26,8 +25,6 @@ const Story = () => {
   const [showMessage, setShowMessage] = useState<string>('')
   const [showMessageDonate, setShowMessageDonate] = useState<string>('')
   const [searchParams, setSearchParams] = useSearchParams()
-
-  const { user }: any = useContext(AuthContext)
 
   const checkStoryAddView = JSON.parse(sessionStorage.getItem('checkStoryAddView') || '[]')
 
@@ -227,7 +224,7 @@ const Story = () => {
             </div>
           </div>
           <div className='main__story'>
-            <ChapterStory getDonate={getDonate} donates={donates} user={user} story={story} totalDonate={totalDonate} />
+            <ChapterStory getDonate={getDonate} donates={donates} story={story} totalDonate={totalDonate} />
             <CommentStory slug={params.slug} story={story} />
           </div>
           <Modal
