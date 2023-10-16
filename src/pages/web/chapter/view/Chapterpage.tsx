@@ -36,7 +36,7 @@ const Chapterpage = () => {
         setLoader(false)
       })
     },
-    [params.slugchapter, params.slugstory, loaderUser]
+    [params.slugchapter, params.slugstory]
   )
 
   useEffect(() => {
