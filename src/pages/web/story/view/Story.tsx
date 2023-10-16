@@ -12,6 +12,7 @@ import ModalChapterVip from '../components/ModalChapterVip'
 import callApi from '~/ultis/callApi'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPerson } from '@fortawesome/free-solid-svg-icons'
+import { checkAddView } from '~/middleware/checkAddView'
 
 const Story = () => {
   // data api
@@ -25,8 +26,6 @@ const Story = () => {
   const [showMessage, setShowMessage] = useState<string>('')
   const [showMessageDonate, setShowMessageDonate] = useState<string>('')
   const [searchParams, setSearchParams] = useSearchParams()
-
-  const checkStoryAddView = JSON.parse(sessionStorage.getItem('checkStoryAddView') || '[]')
 
   const params = useParams()
   const navigate = useNavigate()
@@ -60,40 +59,7 @@ const Story = () => {
     if (searchParams.get('buy')) {
       setIsModalChapterVipOpen(true)
     }
-    if (checkStoryAddView.length === 0) {
-      sessionStorage.setItem('checkStoryAddView', JSON.stringify([{ slug: params.slug, timestamp: Date.now() }]))
-      addViewStory()
-    } else {
-      const itemStory = checkStoryAddView.find((item: any) => {
-        return item.slug === params.slug
-      })
-      if (itemStory) {
-        if (Math.floor((Date.now() - itemStory.timestamp) / 1000) >= 60) {
-          sessionStorage.setItem(
-            'checkStoryAddView',
-            JSON.stringify(
-              checkStoryAddView.map((item: any) => {
-                if (item.slug === params.slug) {
-                  return {
-                    slug: item.slug,
-                    timestamp: Date.now()
-                  }
-                } else {
-                  return item
-                }
-              })
-            )
-          )
-          addViewStory()
-        }
-      } else {
-        sessionStorage.setItem(
-          'checkStoryAddView',
-          JSON.stringify([...checkStoryAddView, { slug: params.slug, timestamp: Date.now() }])
-        )
-        addViewStory()
-      }
-    }
+    checkAddView(params.slug, addViewStory)
   }, [])
 
   useEffect(() => {
